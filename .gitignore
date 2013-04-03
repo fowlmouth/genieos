@@ -1,6 +1,8 @@
 # Global patterns
 *.swp
+*.todelete
 .DS_Store
 nimcache/
 
 # Full paths.
+/recycle

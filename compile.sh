@@ -1,3 +1,4 @@
 #!/bin/sh
 
-gcc -o recycle -framework CoreServices recycle.m
+gcc -o recycle -framework CoreServices -framework Cocoa recycle.m
+touch test1.todelete something.todelete test2.todelete

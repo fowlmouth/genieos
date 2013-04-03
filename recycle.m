@@ -15,20 +15,23 @@ void recycle(const char *filename)
 		&ref, 
 		NULL
 	);  
+	[path release];
 	if (0 == status) {
 		printf("failed to make FSRef\n");
 		return;
 	}
 
 	status = FSMoveObjectToTrashSync(&ref, NULL, kFSFileOperationSkipPreflight);
-	NSLog(@"status: %i", (int)status);
+	printf("status: %i\n", (int)status);
 }
 
 int main(int argc, char **argv)
 {
 	int f;
-	for (f = 1; argv[f]; f++)
+	for (f = 1; argv[f]; f++) {
 		printf("%s\n", argv[f]);
+		recycle(argv[f]);
+	}
 
 	return 0;
 }
