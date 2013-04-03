@@ -16,8 +16,8 @@ void recycle(const char *filename)
 		NULL
 	);  
 	[path release];
-	if (0 == status) {
-		printf("failed to make FSRef\n");
+	if (status) {
+		printf("failed to make FSRef, status %d\n", status);
 		return;
 	}
 
