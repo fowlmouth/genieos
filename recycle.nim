@@ -5,7 +5,7 @@ import strutils, os
 #import <AppKit/AppKit.h>
 
 // Returns zero on success, non zero on failure.
-int _macosxNimRecycle(const char *filename)
+int macosxNimRecycle(const char *filename)
 {
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   NSString *path = [[NSString alloc] initWithUTF8String:filename];
@@ -27,13 +27,12 @@ int _macosxNimRecycle(const char *filename)
 }
 """.}
 
-proc macosxNimRecycle(filename: cstring): int {.
-  importc: "_macosxNimRecycle", nodecl.}
+proc macosxNimRecycle(filename: cstring): int {.importc, nodecl.}
 
 proc recycle(filename: string) =
   let result = macosxNimRecycle(filename)
   if result != 0:
-    raise newException(EOS, "error " & $result & " recycling " & filename)
+    OSError("error " & $result & " recycling " & filename)
 
 proc test() =
   var filename : string
