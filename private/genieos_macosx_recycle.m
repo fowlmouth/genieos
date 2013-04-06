@@ -1,7 +1,7 @@
 #import <AppKit/AppKit.h>
 
 // Returns zero on success, non zero on failure.
-int macosxNimRecycle(const char *filename)
+int genieosMacosxNimRecycle(const char *filename)
 {
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   NSString *path = [[NSString alloc] initWithUTF8String:filename];
