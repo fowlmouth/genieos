@@ -1,6 +1,7 @@
-import genieos, argument_parser, tables
+import genieos, argument_parser, tables, os
 
 const
+  PARAM_SILENT = @["-s", "--silent"]
   PARAM_VERBOSE = @["-v", "--verbose"]
   PARAM_HELP = @["-h", "--help"]
 
@@ -10,6 +11,8 @@ proc process_commandline(): Tcommandline_results =
     help_text = "Be verbose about files being recycled"))
   params.add(new_parameter_specification(names = PARAM_HELP,
     help_text = "Be verbose about files being recycled", consumes = PK_HELP))
+  params.add(new_parameter_specification(names = PARAM_SILENT,
+    help_text = "Don't trigger OS sounds during recycle bin operations"))
 
   result = parse(params)
 
@@ -19,7 +22,10 @@ proc process_commandline(): Tcommandline_results =
     quit()
 
 
-proc process(filename: string, verbose: bool) =
+proc process(filename: string, verbose: bool): bool =
+  ## Recycles the specified path.
+  ##
+  ## If verbose is true, the recc
   if verbose:
     echo "Recycling " & filename
   try:
@@ -30,5 +36,10 @@ proc process(filename: string, verbose: bool) =
 
 when isMainModule:
   let args = process_commandline()
+  var count = 0
   for param in args.positional_parameters:
-    process param.str_val, args.options.hasKey(PARAM_VERBOSE[0])
+    if process(param.str_val, args.options.hasKey(PARAM_VERBOSE[0])):
+      count += 1
+  if not args.options.hasKey(PARAM_SILENT[0]):
+    let wait = playSound(recycleBin)
+    sleep(int(1000 * wait))
