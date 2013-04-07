@@ -1,0 +1,8 @@
+[Package]
+name          = "genieos"
+version       = "9.0.0"
+author        = "Grzegorz Adam Hankiewicz"
+description   = """Too awesome procs to be included in nimrod.os module."""
+license       = "MIT"
+
+SkipDirs = "trash-binary,tests"
