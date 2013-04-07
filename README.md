@@ -83,6 +83,7 @@ Note how I carefully avoided any mention of snakes and dongles here... *oops*. A
 Feedback
 ========
 
-You can send me feedback through [github's issue tracker](issues). I also take
-a look from time to time to [Nimrod's forums](http://forum.nimrod-code.org)
-where you can talk to other *more serious* nimrod programmers.
+You can send me feedback through [github's issue
+tracker](https://github.com/gradha/genieos/issues). I also take a look from
+time to time to [Nimrod's forums](http://forum.nimrod-code.org) where you can
+talk to other *more serious* nimrod programmers.
