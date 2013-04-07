@@ -34,8 +34,9 @@ You could copy the [genieos.nim](genieos.nim) file and [private](private)
 directory to your project or put these somewhere safe and use [nimrod's
 configuration files](http://nimrod-code.org/nimrodc.html#configuration-files)
 feature to specify their path. But that would be really raw, like asking
-[Jessica](http://en.wikipedia.org/wiki/Jessica_Jung) to eat a cucumber (she
-dislikes them!). So you can use likely use [Nimrod's babel package
+[Jessica](http://en.wikipedia.org/wiki/Jessica_Jung) to eat a cucumber ([she
+dislikes them!](http://www.youtube.com/watch?v=TUR7CuD_1zQ)). So you can use
+likely use [Nimrod's babel package
 manager](https://github.com/nimrod-code/babel) and type:
 
     babel install genieos
