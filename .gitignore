@@ -6,6 +6,7 @@ nimcache/
 
 # Full paths.
 /genieos
+/genieos.html
 /recycle
 /tests/test_lib
 /trash-binary/trash
