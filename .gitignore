@@ -1,5 +1,8 @@
-genieos
-genieos.html
+# Patterns.
+*.swp
 nimcache/
-tests/
-trash-binary/
+
+# Absolute paths.
+/genieos
+/tests/
+/trash-binary/
