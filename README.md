@@ -54,6 +54,11 @@ The genieos module comes with embedded docstrings.
 on the exported symbols.  If you installed through babel, you can find this in
 a path similar to ``~/.babel/libs/genieos-version``.
 
+The generated documentation can also be found at
+[http://gradha.github.io/genieos/genieos.html](http://gradha.github.io/genieos/genieos.html).
+No guarantees on its freshness, though, do check the generation date at the
+bottom.
+
 
 Extra binaries
 ==============
