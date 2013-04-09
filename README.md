@@ -36,13 +36,13 @@ configuration files](http://nimrod-code.org/nimrodc.html#configuration-files)
 feature to specify their path. But that would be really raw, like asking
 [Jessica](http://en.wikipedia.org/wiki/Jessica_Jung) to eat a cucumber ([she
 dislikes them!](http://www.youtube.com/watch?v=TUR7CuD_1zQ)). So you can use
-likely use [Nimrod's babel package
-manager](https://github.com/nimrod-code/babel) and type:
+[Nimrod's babel package manager](https://github.com/nimrod-code/babel) and
+type:
 
     babel install genieos
 
-Or at least I hope so, at the moment of writing this there's still no genieos
-babel package.
+Once you have the module *somewhere* you can use ``import genieos`` in your
+source code and everything should be fine.
 
 
 Documentation
