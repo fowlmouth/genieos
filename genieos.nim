@@ -20,6 +20,21 @@ type
   TSound* = enum
     defaultBeep, recycleBin
 
+const
+  VERSION_STR* = "9.1.0" ## Module version as a string.
+  VERSION_INT* = (major: 9, minor: 1, maintenance: 0) ## \
+  ## Module version as an integer tuple.
+  ##
+  ## Major versions changes mean a break in API backwards compatibility, either
+  ## through removal of symbols or modification of their purpose.
+  ##
+  ## Minor version changes can add procs (and maybe default parameters). Minor
+  ## odd versions are development/git/unstable versions. Minor even versions
+  ## are public stable releases.
+  ##
+  ## Maintenance version changes mean I'm not perfect yet despite all the kpop
+  ## I watch.
+
 proc recycle*(filename: string)
   ## Moves a file or directory to the recycle bin of the user.
   ##
