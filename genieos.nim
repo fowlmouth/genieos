@@ -13,6 +13,9 @@
 ##         removeDir filename
 ##       else:
 ##         removeFile filename
+##
+## Source code for this module can be found at
+## https://github.com/gradha/genieos.
 
 import os
 
