@@ -47,8 +47,6 @@ proc process(filename: string, verbose: bool): bool =
 
 proc play_sound_blocking() =
   ## Plays the recycle sound blocking the current thread/process.
-  let procname = paramStr(0)
-  echo "procname ", procname
   let wait = playSound(recycleBin)
   sleep(int(1000 * wait))
 
