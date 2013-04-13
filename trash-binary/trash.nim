@@ -25,11 +25,12 @@ proc process_commandline(): Tcommandline_results =
 proc process(filename: string, verbose: bool): bool =
   ## Recycles the specified path.
   ##
-  ## If verbose is true, the recc
+  ## If verbose is true, it means the path was recycled correctly.
   if verbose:
     echo "Recycling " & filename
   try:
     recycle filename
+    result = true
   except EOS:
     echo "Sorry, could not recycle " & filename
 
@@ -40,6 +41,6 @@ when isMainModule:
   for param in args.positional_parameters:
     if process(param.str_val, args.options.hasKey(PARAM_VERBOSE[0])):
       count += 1
-  if not args.options.hasKey(PARAM_SILENT[0]):
+  if count > 0 and not args.options.hasKey(PARAM_SILENT[0]):
     let wait = playSound(recycleBin)
     sleep(int(1000 * wait))
