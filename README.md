@@ -80,10 +80,8 @@ Unfortunately they are [figuring out where the recycle bin
 is](http://stackoverflow.com/a/6807599/172690) or [cleaning tiles for some
 reason](http://en.wikipedia.org/wiki/Windows_8).
 
-Note how I carefully avoided any mention of snakes and dongles here... *oops*. Anyway, the released versions so far are:
-
- * 9.0.0 - [Taeyeon](http://en.wikipedia.org/wiki/Kim_Tae-yeon), initial
-   release.
+Note how I carefully avoided any mention of snakes and dongles here... *oops*.
+Anyway, [the latest version is 9.0.1](CHANGES.md).
 
 
 Feedback
