@@ -81,7 +81,7 @@ is](http://stackoverflow.com/a/6807599/172690) or [cleaning tiles for some
 reason](http://en.wikipedia.org/wiki/Windows_8).
 
 Note how I carefully avoided any mention of snakes and dongles here... *oops*.
-Anyway, [the latest version is 9.0.1](CHANGES.md).
+Anyway, [the latest version is 9.1.2](CHANGES.md).
 
 
 Feedback

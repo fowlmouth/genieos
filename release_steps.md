@@ -1,6 +1,7 @@
 What to do for a new public release?
 ====================================
 
+* Somehere here re-read git-flow docs and decide how to actually do a release.
 * Check if the future const verison number of the module matches public number,
   if it doesn't update the module const version number to new release.
 * Create new milestone with version number.
