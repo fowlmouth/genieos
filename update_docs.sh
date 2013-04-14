@@ -1,6 +1,7 @@
 #!/bin/sh
 
 CURRDIR=`pwd`
+rm -Rf docs-*
 for VERSION in master `git tag -l`; do
 	TMPDIR=/tmp/genieos-docs-$VERSION
 	DESTDIR=docs-$VERSION
