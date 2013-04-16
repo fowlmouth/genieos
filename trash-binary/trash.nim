@@ -36,7 +36,7 @@ proc process_commandline(): Tcommandline_results =
 proc process(filename: string, verbose: bool): bool =
   ## Recycles the specified path.
   ##
-  ## If verbose is true, it means the path was recycled correctly.
+  ## Returns true if the path was recycled correctly.
   if verbose:
     echo "Recycling " & filename
   try:
