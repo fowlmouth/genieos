@@ -18,7 +18,7 @@ proc process_commandline(): Tcommandline_results =
   params.add(new_parameter_specification(names = PARAM_SOUND,
     help_text = "Plays recycle bin sound and exits"))
   params.add(new_parameter_specification(names = PARAM_HELP,
-    help_text = "Be verbose about files being recycled", consumes = PK_HELP))
+    help_text = "Displays commandline help and exits", consumes = PK_HELP))
   params.add(new_parameter_specification(names = PARAM_SILENT,
     help_text = "Don't trigger OS sounds during recycle bin operations"))
 
