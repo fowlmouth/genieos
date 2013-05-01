@@ -110,7 +110,10 @@ with the silent ``-s`` parameter:
 
 Ah, that's much better. Without producing the sound (and waiting for it to play
 back) the nimrod version goes under 100ms, much closer to the 77ms of the
-cheating objc version.
+cheating objc version. <b>UPDATE:</b> after [implementing sound playback in the
+background](https://github.com/gradha/genieos/issues/2) the normal command
+returns much faster to the foreground, but the external process spawn still
+takes some milliseconds.
 
 Ok, that's it. I won't be running this benchmarks in any way or form in the
 future since that could generate different results due to the CPU load of my
