@@ -17,9 +17,11 @@ If you have Nimrod and the genieos module, you can simply type:
 
     nimrod c -d:release trash.nim
 
-This will generate a ``trash`` binary of more or less 130KB which you can put
-somewhere in your ``PATH`` and happily use. Oh, I nearly forgot. For
-commandline parsing this command uses the [argument_parser
+This will generate a ``trash`` binary of more or less 150KB which you can put
+somewhere in your ``PATH`` and happily use. If you really care about size, you
+can use [the ultimate packer for executables](http://upx.sourceforge.net) like
+``upx --best trash`` to reduce it further to about 52KB. Oh, I nearly forgot.
+For commandline parsing this command uses the [argument_parser
 module](https://github.com/gradha/argument_parser) which you previously have to
 install through [Nimrod's babel package
 manager](https://github.com/nimrod-code/babel) typing:
