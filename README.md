@@ -15,7 +15,7 @@ more fancy than [Girls' Generation
 소녀시대](http://en.wikipedia.org/wiki/Girls'_Generation), also known as
 [Sonyeo Shidae](http://www.youtube.com/watch?v=EOWrdo1kVYw) or
 [SNSD](http://www.youtube.com/watch?v=fYP_3QEb5Yk). Just [tell them your
-wish](http://www.youtube.com/watch?v=wC58wPbgByA), you never know what this
+wish](http://www.youtube.com/watch?v=6SwiSpudKWI), you never know what this
 module could do for you (hey, [it even remixes
 well!](https://soundcloud.com/randommixchannel/luckygenie)).
 
