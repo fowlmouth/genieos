@@ -16,7 +16,8 @@ more fancy than [Girls' Generation
 [Sonyeo Shidae](http://www.youtube.com/watch?v=EOWrdo1kVYw) or
 [SNSD](http://www.youtube.com/watch?v=fYP_3QEb5Yk). Just [tell them your
 wish](http://www.youtube.com/watch?v=wC58wPbgByA), you never know what this
-module could do for you.
+module could do for you (hey, [it even remixes
+well!](https://soundcloud.com/randommixchannel/luckygenie)).
 
 
 
