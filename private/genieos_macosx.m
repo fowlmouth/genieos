@@ -1,5 +1,7 @@
 #import <AppKit/AppKit.h>
 
+static NSString *g_text_uti = @"public.utf8-plain-text";
+
 // Returns zero on success, non zero on failure.
 int genieosMacosxNimRecycle(const char *filename)
 {
@@ -85,7 +87,7 @@ char *genieosMacosxClipboardString(void)
 
 	static NSDictionary *options = nil;
 	if (!options)
-		options = [[NSDictionary dictionaryWithObject:@"public.utf8-plain-text"
+		options = [[NSDictionary dictionaryWithObject:g_text_uti
 			forKey:NSPasteboardURLReadingContentsConformToTypesKey] retain];
 	if (!options) {
 		printf("Error allocating options dictionary!");
@@ -122,4 +124,25 @@ int genieosMacosxClipboardChange(void)
 
 	[pool release];
 	return ret;
+}
+
+/// Replaces the current clipboard with the provided utf8 string.
+void genieosMacosxSetClipboardString(const char *text)
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+	if (!g_pasteboard)
+		init_pasteboard();
+	if (!g_pasteboard) {
+		printf("Error getting pasteboard!");
+		return;
+	}
+
+	NSString *data = [[NSString alloc] initWithUTF8String:text];
+	[g_pasteboard clearContents];
+	[g_pasteboard setString:data forType:g_text_uti];
+	[data release];
+
+exit:
+	[pool release];
 }

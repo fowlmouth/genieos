@@ -66,6 +66,12 @@ proc get_clipboard_string*(): cstring
   ##
   ## Returns nil if the clipboard can't be accessed or it's not supported.
 
+proc set_clipboard*(text: string)
+  ## Sets the OS clipboard to the specified text.
+  ##
+  ## The text has to be a valid value, passing nil will assert in debug builds
+  ## and crash in release builds.
+
 proc get_clipboard_change_timestamp*(): int
   ## Returns an integer representing the last version of the clipboard.
   ##
@@ -84,6 +90,7 @@ when defined(macosx):
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
   proc genieosMacosxClipboardString(): cstring {.importc.}
   proc genieosMacosxClipboardChange(): int {.importc.}
+  proc genieosMacosxSetClipboardString(cstring) {.importc.}
 
   proc playSound*(soundType = defaultBeep): float64 =
     case soundType
@@ -115,3 +122,7 @@ when defined(macosx):
 
   proc get_clipboard_change_timestamp*(): int =
     result = genieosMacosxClipboardChange()
+
+  proc set_clipboard*(text: string) =
+    assert (not text.isNil())
+    genieosMacosxSetClipboardString(cstring(text))
