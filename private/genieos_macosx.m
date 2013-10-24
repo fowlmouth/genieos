@@ -51,3 +51,55 @@ double genieosMacosxPlayAif(const char *filename)
 	[pool release];
 	return ret;
 }
+
+
+// Stores the global pateboard.
+static NSPasteboard *g_pasteboard = nil;
+
+/// Initializes the global pasteboard object if previously nil.
+static void init_pasteboard()
+{
+	if (g_pasteboard)
+		return;
+	g_pasteboard = [[NSPasteboard pasteboardWithName:NSGeneralPboard] retain];
+}
+
+char *genieosMacosxClipboardString(void)
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	static char *ret = 0;
+
+	free(ret);
+	ret = 0;
+
+	if (!g_pasteboard)
+		init_pasteboard();
+	if (!g_pasteboard) {
+		printf("Error getting pasteboard!");
+		goto exit;
+	}
+
+	static NSDictionary *options = nil;
+	if (!options)
+		options = [[NSDictionary dictionaryWithObject:@"public.utf8-plain-text"
+			forKey:NSPasteboardURLReadingContentsConformToTypesKey] retain];
+	if (!options) {
+		printf("Error allocating options dictionary!");
+		goto exit;
+	}
+
+	NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
+	NSArray *copiedItems = [g_pasteboard readObjectsForClasses:classes
+		options:nil];
+
+	if ([copiedItems count]) {
+		NSString *text = [copiedItems objectAtIndex:0];
+		const char *c_string = [text UTF8String];
+		if (c_string)
+			ret = strdup(c_string);
+	}
+
+exit:
+	[pool release];
+	return ret;
+}

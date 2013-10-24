@@ -61,6 +61,12 @@ proc playSound*(soundType = defaultBeep): float64 {.discardable.}
   ##
   ## At the moment this is only implemented under macosx.
 
+proc get_clipboard_string*(): cstring
+  ## Returns the contents of the OS clipboard as a string.
+  ##
+  ## Returns nil if the clipboard can't be accessed or it's not supported.
+
+
 when defined(macosx):
   {.passL: "-framework AppKit".}
   {.compile: "private/genieos_macosx.m".}
@@ -69,6 +75,8 @@ when defined(macosx):
   proc genieosMacosxBeep() {.importc, nodecl.}
 
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
+
+  proc genieosMacosxClipboardString(): cstring {.importc.}
 
   proc playSound*(soundType = defaultBeep): float64 =
     case soundType
@@ -94,3 +102,6 @@ when defined(macosx):
     let result = genieosMacosxNimRecycle(filename)
     if result != 0:
       OSError("error " & $result & " recycling " & filename)
+
+  proc get_clipboard_string*(): cstring =
+    result = genieosMacosxClipboardString()

@@ -11,6 +11,12 @@ proc test_recycle() =
     createDir filename
     recycle filename
 
+proc test_clipboard() =
+  let text = get_clipboard_string()
+  echo "Clipboard content ", if text.isNil: "(nil)" else: $text
+
+
 when isMainModule:
+  test_clipboard()
   test_recycle()
   echo "All tests done!"
