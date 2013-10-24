@@ -64,6 +64,10 @@ static void init_pasteboard()
 	g_pasteboard = [[NSPasteboard pasteboardWithName:NSGeneralPboard] retain];
 }
 
+/** Gets the current string and strdups it.
+ *
+ * Future calls to the function will free the string and alloc a new one.
+ */
 char *genieosMacosxClipboardString(void)
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -100,6 +104,22 @@ char *genieosMacosxClipboardString(void)
 	}
 
 exit:
+	[pool release];
+	return ret;
+}
+
+/// Returns the current clipboard change value.
+int genieosMacosxClipboardChange(void)
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+	if (!g_pasteboard)
+		init_pasteboard();
+
+	int ret = -1;
+	if (g_pasteboard)
+		ret = [g_pasteboard changeCount];
+
 	[pool release];
 	return ret;
 }
