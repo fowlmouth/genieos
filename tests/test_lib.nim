@@ -31,7 +31,7 @@ proc test_change_clipboard() =
 
   set_clipboard("Nimrod is awesome!")
   assert get_clipboard_change_timestamp() != first_change
-  let readback_string = $get_clipboard_string()
+  let readback_string = get_clipboard_string()
   assert readback_string == input_string
   echo "Was able to change clipboard to '" & input_string & "'"
 
