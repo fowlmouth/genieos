@@ -4,7 +4,8 @@ Changes
 v9.1.2 [Sunny](http://en.wikipedia.org/wiki/Sunny_(singer\)) ????-??-??
 -----------------------------------------------------------------------
 
-* Who knows.
+* [Added basic read/write MacOSX clipboard
+  support](https://github.com/gradha/genieos/issues/5).
 
 v9.0.1 [Jessica](http://en.wikipedia.org/wiki/Jessica_Jung) 2013-04-14
 ----------------------------------------------------------------------
