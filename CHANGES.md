@@ -6,6 +6,8 @@ v9.1.2 [Sunny](http://en.wikipedia.org/wiki/Sunny_(singer\)) ????-??-??
 
 * [Added basic read/write MacOSX clipboard
   support](https://github.com/gradha/genieos/issues/5).
+* [Crash retrieving clipboard
+  string](https://github.com/gradha/genieos/issues/7).
 
 v9.0.1 [Jessica](http://en.wikipedia.org/wiki/Jessica_Jung) 2013-04-14
 ----------------------------------------------------------------------

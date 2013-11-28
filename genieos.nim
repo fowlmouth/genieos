@@ -118,7 +118,9 @@ when defined(macosx):
       OSError("error " & $result & " recycling " & filename)
 
   proc get_clipboard_string*(): string =
-    result = $genieosMacosxClipboardString()
+    let cresult = genieosMacosxClipboardString()
+    if not cresult.isNil():
+      result = $cresult
 
   proc get_clipboard_change_timestamp*(): int =
     result = genieosMacosxClipboardChange()
@@ -126,3 +128,13 @@ when defined(macosx):
   proc set_clipboard*(text: string) =
     assert (not text.isNil())
     genieosMacosxSetClipboardString(cstring(text))
+
+
+when isMainModule:
+  echo "Dummy tests"
+  var
+    a: cstring
+  if a.isNil:
+    echo "Is nil!"
+  else:
+    echo ($a)
