@@ -31,6 +31,9 @@ License
 Installation and usage
 ======================
 
+Stable version
+--------------
+
 You could copy the `genieos.nim <genieos.nim>`_ file and `private <private>`_
 directory to your project or put these somewhere safe and use `nimrod's
 configuration files <http://nimrod-lang.org/nimrodc.html#configuration-files>`_
@@ -43,20 +46,40 @@ type::
     babel update
     babel install genieos
 
-Once you have the module *somewhere* you can use ``import genieos`` in your
-source code and everything should be fine.
+
+Development version
+-------------------
+
+Use `Nimrod's babel package manager <https://github.com/nimrod-code/babel>`_ to
+install locally the github checkout::
+
+    $ git clone https://github.com/gradha/genieos.git
+    $ cd genieos
+    $ git checkout develop
+    $ babel install
+
+
+Usage
+=====
+
+Once you have installed the package you can ``import genieos`` in your programs
+and access the exported procs.
 
 
 Documentation
 =============
 
-The genieos module comes with embedded docstrings.
-`Sooyoung <http://en.wikipedia.org/wiki/Sooyoung>`_ recommends you to run
-``nimrod doc2 genieos.nim`` and obtain a reference html file with instructions
-on the exported symbols.  If you installed through babel, you can find this in
-a path similar to ``~/.babel/libs/genieos-version``.
+The genieos module comes with embedded docstrings.  `Sooyoung
+<http://en.wikipedia.org/wiki/Sooyoung>`_ recommends you to run the ``doc``
+`nakefile task <https://github.com/fowlmouth/nake>`_ to obtain the HTML
+reference file with instructions on the exported symbols. Unix example::
 
-The generated documentation for all public versions can also be found at
+    $ cd `babel path genieos`
+    $ nake doc
+    $ open docindex.html
+
+The `docindex file <docindex.rst>`_ links all the available documentation.
+Generated documentation for all public API versions can also be found at
 `http://gradha.github.io/genieos/ <http://gradha.github.io/genieos/>`_.  No
 guarantees on its freshness, though, do check the generation date at the
 bottom.
