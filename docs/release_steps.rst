@@ -3,7 +3,8 @@ What to do for a new public release?
 
 * Create new milestone with version number.
 * Create new dummy issue *Release versionname* and assign to that milestone.
-* git flow release start versionname (versionname without v).
+* git flow release start versionname (versionname without v but including SNSD
+  member, like ``9.1.2-sunny``).
 * Update version numbers:
 
   * Modify `../README.rst <../README.rst>`_.
@@ -13,8 +14,8 @@ What to do for a new public release?
     version/number.
 
 * ``git commit -av`` into the release branch the version number changes.
-* ``git flow release finish versionname`` (the tagname is versionname without
-  v).
+* ``git flow release finish versionname`` (the tagname is versionname without v
+  but including SNSD member, like ``9.1.2-sunny``).
 * Move closed issues from "*future milestone*" to the release milestone.
 * Push all to git: ``git push origin master develop --tags``.
 * Increase version const number in main module, at least maintenance (stable
