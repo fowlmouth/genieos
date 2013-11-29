@@ -4,7 +4,7 @@ version       = "9.3.1"
 author        = "Grzegorz Adam Hankiewicz"
 description   = """Too awesome procs to be included in nimrod.os module."""
 license       = "MIT"
-#bin           = "trash-binary/trash"
+bin           = "trash-binary/trash"
 
 InstallFiles = "docs/CHANGES.rst,LICENSE.rst,README.rst,genieos.nim,nakefile.nim,docindex.rst,trash-binary/trash.nim,trash-binary/nimrod.cfg,trash-binary/README.rst,private/genieos_macosx.m"
 
