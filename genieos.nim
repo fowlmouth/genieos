@@ -24,8 +24,8 @@ type
     defaultBeep, recycleBin
 
 const
-  VERSION_STR* = "9.0.1" ## Module version as a string.
-  VERSION_INT* = (major: 9, minor: 0, maintenance: 1) ## \
+  VERSION_STR* = "9.2.0" ## Module version as a string.
+  VERSION_INT* = (major: 9, minor: 2, maintenance: 0) ## \
   ## Module version as an integer tuple.
   ##
   ## Major versions changes mean a break in API backwards compatibility, either
@@ -61,14 +61,36 @@ proc playSound*(soundType = defaultBeep): float64 {.discardable.}
   ##
   ## At the moment this is only implemented under macosx.
 
+proc get_clipboard_string*(): string
+  ## Returns the contents of the OS clipboard as a string.
+  ##
+  ## Returns nil if the clipboard can't be accessed or it's not supported.
+
+proc set_clipboard*(text: string)
+  ## Sets the OS clipboard to the specified text.
+  ##
+  ## The text has to be a valid value, passing nil will assert in debug builds
+  ## and crash in release builds.
+
+proc get_clipboard_change_timestamp*(): int
+  ## Returns an integer representing the last version of the clipboard.
+  ##
+  ## There is no way to get notified of clipboard changes, you need to poll
+  ## yourself the clipboard. You can use this proc which returns the last value
+  ## of the clipboard, then compare it to future values.
+  ##
+  ## Note that a change of the timestamp doesn't imply a change of *contents*.
+  ## The user could have well copied the same content into the clipboard.
+
 when defined(macosx):
   {.passL: "-framework AppKit".}
   {.compile: "private/genieos_macosx.m".}
   proc genieosMacosxNimRecycle(filename: cstring): int {.importc, nodecl.}
-
   proc genieosMacosxBeep() {.importc, nodecl.}
-
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
+  proc genieosMacosxClipboardString(): cstring {.importc.}
+  proc genieosMacosxClipboardChange(): int {.importc.}
+  proc genieosMacosxSetClipboardString(cstring) {.importc.}
 
   proc playSound*(soundType = defaultBeep): float64 =
     case soundType
@@ -94,3 +116,25 @@ when defined(macosx):
     let result = genieosMacosxNimRecycle(filename)
     if result != 0:
       OSError("error " & $result & " recycling " & filename)
+
+  proc get_clipboard_string*(): string =
+    let cresult = genieosMacosxClipboardString()
+    if not cresult.isNil():
+      result = $cresult
+
+  proc get_clipboard_change_timestamp*(): int =
+    result = genieosMacosxClipboardChange()
+
+  proc set_clipboard*(text: string) =
+    assert (not text.isNil())
+    genieosMacosxSetClipboardString(cstring(text))
+
+
+when isMainModule:
+  echo "Dummy tests"
+  var
+    a: cstring
+  if a.isNil:
+    echo "Is nil!"
+  else:
+    echo ($a)
