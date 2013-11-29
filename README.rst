@@ -106,7 +106,7 @@ Unfortunately they are `figuring out where the recycle bin is
 reason <http://en.wikipedia.org/wiki/Windows_8>`_.
 
 Note how I carefully avoided any mention of snakes and dongles here... *oops*.
-Anyway, `the latest version is 9.1.2 <docs/CHANGES.rst>`_.
+Anyway, `the latest version is 9.2.0 <docs/CHANGES.rst>`_.
 
 
 Git branches

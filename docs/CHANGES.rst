@@ -1,7 +1,7 @@
 Changes
 =======
 
-v9.1.2 `Sunny <http://en.wikipedia.org/wiki/Sunny_(singer)>`_ ????-??-??
+v9.2.0 `Sunny <http://en.wikipedia.org/wiki/Sunny_(singer)>`_ 2013-11-29
 ------------------------------------------------------------------------
 
 * `Added basic read/write MacOSX clipboard support
