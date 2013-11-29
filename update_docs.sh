@@ -12,6 +12,7 @@ for VERSION in develop `git tag -l`; do
 		cd "${CURRDIR}" && \
 		mkdir $DESTDIR && \
 		cp $TMPDIR/genieos.html $DESTDIR && \
+		git add docs-* && \
 		git status && \
-		echo "Finished updating docs"
+		echo "Finished updating docs, please remember to add the link to index.html!"
 done
