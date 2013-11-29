@@ -5,6 +5,10 @@
 nimcache/
 
 # Full paths.
+/LICENSE.html
+/README.html
+/docs/CHANGES.html
+/docs/release_steps.html
 /genieos
 /genieos.html
 /nakefile
