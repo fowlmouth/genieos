@@ -24,8 +24,8 @@ type
     defaultBeep, recycleBin
 
 const
-  VERSION_STR* = "9.2.0" ## Module version as a string.
-  VERSION_INT* = (major: 9, minor: 2, maintenance: 0) ## \
+  VERSION_STR* = "9.3.1" ## Module version as a string.
+  VERSION_INT* = (major: 9, minor: 3, maintenance: 1) ## \
   ## Module version as an integer tuple.
   ##
   ## Major versions changes mean a break in API backwards compatibility, either
