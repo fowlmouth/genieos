@@ -6,10 +6,11 @@ What to do for a new public release?
 * git flow release start versionname (versionname without v).
 * Update version numbers:
 
-  * Modify `../README.rst`_.
-  * Modify `../genieos.nim`_.
-  * Modify `../genieos.babel`_.
-  * Update `../CHANGES.rst`_ with list of changes and version/number.
+  * Modify `../README.rst <../README.rst>`_.
+  * Modify `../genieos.nim <../genieos.nim>`_.
+  * Modify `../genieos.babel <../genieos.babel>`_.
+  * Update `CHANGES.rst <CHANGES.rst>`_ with list of changes and
+    version/number.
 
 * ``git commit -av`` into the release branch the version number changes.
 * ``git flow release finish versionname`` (the tagname is versionname without
@@ -19,10 +20,10 @@ What to do for a new public release?
 * Increase version const number in main module, at least maintenance (stable
   version + 0.1.1):
 
-  * Modify `../README.rst`_.
-  * Modify `../genieos.nim`_.
-  * Modify `../genieos.babel`_.
-  * Update `../CHANGES.rst`_ development version with unknown date.
+  * Modify `../README.rst <../README.rst>`_.
+  * Modify `../genieos.nim <../genieos.nim>`_.
+  * Modify `../genieos.babel <../genieos.babel>`_.
+  * Update `CHANGES.rst <CHANGES.rst>`_ development version with unknown date.
 
 * ``git commit -av`` into develop with *Bumps version numbers for develop
   branch. Refs #release issue*.
