@@ -3,7 +3,7 @@ import nake, os, times, osproc
 let
   modules = @["genieos"]
   rst_files = @["docs"/"CHANGES", "docs"/"release_steps",
-    "LICENSE", "README", "docindex"]
+    "trash-binary"/"README", "LICENSE", "README", "docindex"]
 
 task "babel", "Uses babel to install genieos locally":
   if shell("babel install"):

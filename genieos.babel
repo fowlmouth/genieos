@@ -4,5 +4,9 @@ version       = "9.1.2"
 author        = "Grzegorz Adam Hankiewicz"
 description   = """Too awesome procs to be included in nimrod.os module."""
 license       = "MIT"
+#bin           = "trash-binary/trash"
 
-SkipDirs = "trash-binary,tests"
+InstallFiles = "docs/CHANGES.rst,LICENSE.rst,README.rst,genieos.nim,nakefile.nim,docindex.rst,trash-binary/trash.nim,trash-binary/nimrod.cfg,trash-binary/README.rst,private/genieos_macosx.m"
+
+[Deps]
+Requires: "nake >= 1.0,argument_parser >= 0.1.2"
